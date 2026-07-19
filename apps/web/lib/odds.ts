@@ -37,7 +37,9 @@ export function parseCSV(text: string, source: "betano" | "xbet"): ParsedCSV {
   const rows: Record<string, string>[] = [];
 
   for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(",").map(v => v.trim().replace(/^"|"$/g, ""));
+    const line = lines[i];
+    if (!line) continue;
+    const values = line.split(",").map(v => v.trim().replace(/^"|"$/g, ""));
     const row: Record<string, string> = {};
     headers.forEach((h, idx) => {
       row[h] = values[idx] || "";
