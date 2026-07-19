@@ -68,7 +68,7 @@ export function mergeOdds(parsed: ParsedCSV[]): OddsSelection[] {
         time: row.time || "",
       };
 
-      const odd = parseFloat(row.odd);
+      const odd = parseFloat(row.odd || "");
       if (!isNaN(odd)) {
         if (p.source === "betano") existing.betanoOdd = odd;
         if (p.source === "xbet") existing.xbetOdd = odd;
