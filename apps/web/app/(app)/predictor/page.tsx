@@ -7,7 +7,8 @@ import Link from "next/link";
 export default function PredictorPage() {
   const [loaded, setLoaded] = useState(false);
 
-  const STREAMLIT_URL = "https://26vjs58oksd3ltfpns4j6l.streamlit.app/?embed=true";
+  // TODO: cambia esta URL por la de tu app en Streamlit Cloud
+  const STREAMLIT_URL = "https://mundial-predictor.streamlit.app/?embed=true";
 
   return (
     <div className="relative flex h-[calc(100vh-4rem)] w-full flex-col overflow-hidden bg-zinc-950">
